@@ -1,5 +1,3 @@
-/*jslint node: true */
-/*jslint esversion: 6 */
 "user strict";
 const moment = require('moment'),
     _ = require('lodash'),
