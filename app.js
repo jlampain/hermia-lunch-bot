@@ -68,15 +68,3 @@ app.listen(config('PORT'), (err) => {
     if (err) throw err;
     console.log('Lunchbot lives on PORT ' + config('PORT'));
 });
-
-/*
-restaurants.menus().then(m => {
-   
-   let f = _.filter(m, attachment => { return attachment.title.match(new RegExp('hermiaaa', 'i')); });
-      if (!_.isEmpty(f)) {
-        m = f
-      };
-  
-  console.log(m)
-});
-*/
