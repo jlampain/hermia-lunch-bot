@@ -10,7 +10,7 @@ const Slack = require('slack-node'),
     restaurants = require('../restaurants');
 
 /*
-Set the Fi local, this will help us to parse linkosuo menus
+Set the Fi locale, this will help us to parse linkosuo menus
  */
 moment.locale('fi', {
     weekdaysMin: "Su_Ma_Ti_Ke_To_Pe_La".split("_")

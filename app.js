@@ -13,12 +13,15 @@ const moment = require('moment'),
     };
 
 /*
-Set the Fi local, this will help us to parse linkosuo menus
+Set the Fi locale, this will help us to parse linkosuo menus
  */
 moment.locale('fi', {
     weekdaysMin: "Su_Ma_Ti_Ke_To_Pe_La".split("_")
 });
 
+/*
+Express
+ */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
@@ -27,7 +30,7 @@ app.use(bodyParser.urlencoded({
 app.get('/', (req, res) => {
     res.send("I'm lunch-bot");
 });
-
+ 
 /*
 Handle bot commands
  */

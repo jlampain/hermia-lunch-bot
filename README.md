@@ -1,8 +1,8 @@
 # Hermia-Lunch-Bot
 
-Slack bot to display lunch menus in Hermia campus area: [Hermia 5](http://www.sodexo.fi/hermia5), [Hermia 6](http://www.sodexo.fi/hermia6), [Hertta](http://www.linkosuo.fi/kahvilat/ravintola-hertta.html) and [Orvokki](http://www.linkosuo.fi/kahvilat/ravintola-orvokki.html).
+Slack bot to display lunch menus in Hermia campus area: [Hermia 5](http://www.sodexo.fi/hermia5), [Hermia 6](http://www.sodexo.fi/hermia6), [Hertta](http://www.linkosuo.fi/kahvilat/ravintola-hertta.html) and [Orvokki](http://www.linkosuo.fi/kahvilat/ravintola-orvokki.html). Kudos to this [nice tutorial](https://blog.heroku.com/archives/2016/3/9/how-to-deploy-your-slack-bots-to-heroku) from Heroku folks.
 
-Kudos to this [nice tutorial](https://blog.heroku.com/archives/2016/3/9/how-to-deploy-your-slack-bots-to-heroku) from Heroku folks.
+![Hermia-Lunch-Bot](https://raw.githubusercontent.com/jlampain/hermia-lunch-bot/master/sample/lunchbot.png "Hermia-Lunch-Bot")
 
 ### Supported `/slash` commands
 
@@ -72,6 +72,7 @@ And configure `LUNCHBOT_COMMAND_TOKEN` config var via Heroku dashboard.
 ### Heroku Scheduler
 
 One can add Heroku scheduler to post lunch menus to Slack channel at scheduled time intervals. 
+
 1. Add [incoming web hook to slack]() (take a note to the provided webhook url)
 2. Add and configure `LUNCHBOT_WEBHOOK_URL`config var via Heroku dashboard
 3. Use [Heroku Scheduler](https://devcenter.heroku.com/articles/scheduler) to run `npm run notify` once per day for example
