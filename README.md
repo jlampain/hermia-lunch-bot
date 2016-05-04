@@ -73,8 +73,8 @@ And configure `LUNCHBOT_COMMAND_TOKEN` config var via Heroku dashboard.
 
 One can add Heroku scheduler to post lunch menus to Slack channel at scheduled time intervals. 
 
-1. Add [incoming web hook to slack]() (take a note to the provided webhook url)
-2. Add and configure `LUNCHBOT_WEBHOOK_URL`config var via Heroku dashboard
+1. Add [incoming web hook to slack](https://my.slack.com/services/new/incoming-webhook/) (take a note to the provided webhook url)
+2. Add and configure `LUNCHBOT_WEBHOOK_URL` config var via Heroku dashboard
 3. Use [Heroku Scheduler](https://devcenter.heroku.com/articles/scheduler) to run `npm run notify` once per day for example
 
 ### License
