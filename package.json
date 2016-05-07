@@ -1,7 +1,7 @@
 {
   "name": "hermia-lunch-bot",
   "version": "0.0.1",
-  "description": "slack-bot for hermia lunch menus",
+  "description": "slackbot for hermia lunch menus",
   "main": "app.js",
   "engines": {
     "node": "6.x.x"

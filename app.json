@@ -1,0 +1,22 @@
+{
+  "name": "hermia-lunch-bot",
+  "description": "Slackbot for Hermia lunch menus",
+  "repository": "https://github.com/jlampain/hermia-lunch-bot",
+  "keywords": ["node", "slack", "bot"],
+  "success_url": "/",
+  "env": {
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "LUNCHBOT_COMMAND_TOKEN": {
+      "description": "Slash command token, for the lunchbot command endpoint",
+      "required": true
+    },
+    "LUNCHBOT_WEBHOOK_URL": {
+      "description": "Slack webhook url, for scheluded slack posts to selected channel",
+      "required": false
+    },
+    "NODE_ENV": "staging"
+  },
+  "image": "heroku/nodejs"
+}
