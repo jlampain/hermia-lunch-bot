@@ -15,8 +15,7 @@
     "LUNCHBOT_WEBHOOK_URL": {
       "description": "Slack webhook url, for scheluded slack posts to selected channel",
       "required": false
-    },
-    "NODE_ENV": "staging"
+    }
   },
   "image": "heroku/nodejs"
 }

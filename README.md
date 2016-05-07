@@ -36,7 +36,7 @@ PORT=3000
 ```shell
 $ npm start
 
-Lumchbot lives on PORT 3000
+Lunchbot lives on PORT 3000
 ```
 
 Visit [localhost:3000](http://localhost:3000).
@@ -47,27 +47,9 @@ One can add new modules into `/restaurants` folder. Module should fetch the menu
 
 ### Deploy to Heroku
 
-_With the [Heroku Toolbelt](https://toolbelt.heroku.com)_
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-```shell
-$ heroku create {optional-app-name}
-
-Creating app... done, stack is cedar-14
-https://blooming-scrubland-64464.herokuapp.com/
-
-$ git push heroku master
-...
-remote: -----> Node.js app detected
-...
-remote:        https://blooming-scrubland-64464.herokuapp.com/ deployed to Heroku
-...
-To https://git.heroku.com/blooming-scrubland-64464.git
- * [new branch]      master -> master
-
-$ heroku open
-```
-
-And configure `LUNCHBOT_COMMAND_TOKEN` config var via Heroku dashboard.  
+Or With the [Heroku Toolbelt](https://toolbelt.heroku.com) and configure `LUNCHBOT_COMMAND_TOKEN` config var via Heroku dashboard.
 
 ### Heroku Scheduler
 
