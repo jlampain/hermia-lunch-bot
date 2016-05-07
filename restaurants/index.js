@@ -12,15 +12,17 @@ restaurants.push(require('./hermia6.js'));
  * @return {array} Array of slack message attachments
  */
 const menus = () => {
-	let p = [];
- 	restaurants.forEach(restaurant => { p.push(restaurant.menu()); });   
-    return new Promise(function(resolve) {
-        Promise.all(p).then(function(m) { 
+    let p = [];
+    restaurants.forEach(restaurant => {
+        p.push(restaurant.menu());
+    });
+    return new Promise(resolve => {
+        Promise.all(p).then(m => {
             resolve(m);
-        });  
-    });   
+        });
+    });
 };
- 
+
 module.exports = {
-	menus : menus
+    menus: menus
 };

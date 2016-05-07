@@ -1,6 +1,6 @@
 "use strict";
-const   rp = require('request-promise'),
-         _ = require('lodash');
+const rp = require('request-promise'),
+    _ = require('lodash');
 
 /**
  * Fetches lunch menu via sodexo REST API
@@ -22,7 +22,7 @@ const getMenu = (url, title) => {
             .then(body => {
                 let list = JSON.parse(body);
                 if (list.hasOwnProperty('courses') && !_.isEmpty(list.courses)) {
-                    list.courses.forEach(function(entry, index) {
+                    list.courses.forEach((entry, index) => {
                         if (index === 0) {
                             attachment.text = '• ' + entry.title_fi;
                         } else {
@@ -42,5 +42,5 @@ const getMenu = (url, title) => {
 };
 
 module.exports = {
-    getMenu : getMenu
+    getMenu: getMenu
 };
