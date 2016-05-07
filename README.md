@@ -6,7 +6,7 @@ Slackbot which displays lunch menus in Hermia campus area: [Hermia 5](http://www
 
 ### Supported `/slash` commands
 
-Create a `/lunch` [custom slash command](https://api.slack.com/slash-commands), using the URL: `{app-name}.herokuapp.com/commands/lunchbot`. *Take note of the provided `token`, this is used to verify requests come from Slack - `LUNCHBOT_COMMAND_TOKEN` config variable.*
+Create a `/lunch` [custom slash command](https://api.slack.com/slash-commands), using the URL: `{your-app-url}/commands/lunchbot`. Take note of the provided `token`, this is used to verify requests come from Slack - `LUNCHBOT_COMMAND_TOKEN` config variable.
 
 - `/lunch` - Displays all lunch menus
 - `/lunch orvokki` - Displays Orvokki lunch menu
@@ -49,7 +49,7 @@ One can add new modules into `/restaurants` folder. Module should fetch the menu
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Or With the [Heroku Toolbelt](https://toolbelt.heroku.com) and configure `LUNCHBOT_COMMAND_TOKEN` config var via Heroku dashboard.
+Or with the [Heroku Toolbelt](https://toolbelt.heroku.com) and configure `LUNCHBOT_COMMAND_TOKEN` config var via Heroku dashboard.
 
 ### Heroku Scheduler
 
