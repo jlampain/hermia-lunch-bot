@@ -30,11 +30,11 @@ const getMenu = (url, title) => {
                 str = str.replace(/<br\s*[\/]?>/gi, "\n• ");
                 str = str.replace('&#x20AC;', " eur");
                 str = str.split('Lataa lounaslista')[0];
-                attachment.text = $(str).text() != 'undefined' ? '• ' + $(str).text() : 'Sorry, menu is not available today';
+                attachment.text = $(str).text() != 'undefined' ? '• ' + $(str).text() : '• Sorry, menu is not available today';
                 resolve(attachment);
             })
             .catch(err => {
-                attachment.text = 'Sorry, menu is not available today';
+                attachment.text = '• Sorry, menu is not available today';
                 resolve(attachment);
             });
     });

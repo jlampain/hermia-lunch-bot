@@ -12,6 +12,8 @@ const moment = require('moment'),
         icon_emoji: config('ICON_EMOJI')
     };
 
+module.exports = app; // for testing
+
 /*
 Set the Fi locale, this will help us to parse linkosuo menus
  */
@@ -37,9 +39,8 @@ Handle bot commands
 app.post('/commands/lunchbot', (req, res) => {
     let payload = req.body;
     if (!payload || payload.token !== config('LUNCHBOT_COMMAND_TOKEN')) {
-        let err = 'Invalid slack token was provided';
-        console.log(err);
-        res.status(401).end(err);
+        let error = { err : 'Invalid slack token'};
+        res.status(401).json(error);
         return;
     } else {
         // get menus

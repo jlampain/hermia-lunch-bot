@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "node app.js",
-    "notify": "node ./tasks/notify.js"
+    "notify": "node ./tasks/notify.js",
+    "test": "./node_modules/.bin/mocha tests"
   },
   "author": "Jussi Lampainen",
   "license": "MIT",
@@ -21,5 +22,11 @@
     "moment": "^2.13.0",
     "request-promise": "^3.0.0",
     "slack-node": "^0.2.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5",
+    "mocha": "^2.4.5",
+    "should": "^8.3.1",
+    "supertest": "^1.2.0"
   }
 }

@@ -30,12 +30,12 @@ const getMenu = (url, title) => {
                         }
                     });
                 } else {
-                    attachment.text = 'Sorry, menu is not available today';
+                    attachment.text = '• Sorry, menu is not available today';
                 }
                 resolve(attachment);
             })
             .catch(err => {
-                attachment.text = 'Sorry, menu is not available today';
+                attachment.text = '• Sorry, menu is not available today';
                 resolve(attachment);
             });
     });

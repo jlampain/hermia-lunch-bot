@@ -26,7 +26,7 @@ if (moment().format('dd') != 'Su' && moment().format('dd') != 'La') {
             channel: config('SLACK_CHANNEL'),
             username: "lunchbot",
             icon_emoji: config('ICON_EMOJI'),
-            text: "What to eat today in Hermia?",
+            text: "I found following in Hermia campus area",
             attachments: m
         }, (err, response) => {
             if (err) {
