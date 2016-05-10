@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node app.js",
     "notify": "node ./tasks/notify.js",
-    "test": "./node_modules/.bin/istanbul cover -R ./node_modules/mocha/bin/_mocha tests"
+    "test": "./node_modules/.bin/istanbul cover -R ./node_modules/mocha/bin/_mocha tests",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "author": "Jussi Lampainen",
   "license": "MIT",
@@ -24,6 +25,7 @@
     "slack-node": "^0.2.0"
   },
   "devDependencies": {
+    "coveralls": "^2.11.9",
     "istanbul": "^0.4.3",
     "jasmine-node": "^1.14.5",
     "mocha": "^2.4.5",
