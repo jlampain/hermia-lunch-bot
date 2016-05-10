@@ -21,10 +21,10 @@ Create a `/lunch` [custom slash command](https://api.slack.com/slash-commands), 
 $ npm install
 ```
 
-### Copy `.env_example` to `.env`
+### Copy `.sample` to `.env`
 
 ```shell
-$ cp .env-example .env
+$ cp .env_sample .env
 ```
 
 ### Configure
