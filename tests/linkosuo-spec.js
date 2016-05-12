@@ -1,3 +1,4 @@
+"user strict";
 const linkosuo = require('../restaurants/helpers/linkosuo'),
     should = require('should'),
     moment = require('moment');
@@ -5,7 +6,7 @@ const linkosuo = require('../restaurants/helpers/linkosuo'),
 /*
 Set the Fi locale, this will help us to parse linkosuo menus
  */
-moment.locale('fi', {
+moment.updateLocale('fi', {
     weekdaysMin: "Su_Ma_Ti_Ke_To_Pe_La".split("_")
 });
 
@@ -18,6 +19,7 @@ describe("Linkosuo", () => {
                 m.should.have.property('text');
                 m.text.should.startWith('• ');
                 m.should.have.property('color');
+                console.log(m);
             });
         });
 
@@ -25,7 +27,6 @@ describe("Linkosuo", () => {
             return linkosuo.getMenu('http://www.google.com', 'Orvokki').then(m => {
                 m.should.have.property('title', 'Orvokki');
                 m.should.have.property('text', '• Sorry, menu is not available today');
-                m.should.have.property('color');
             });
         });
 

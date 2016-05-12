@@ -1,7 +1,7 @@
-const should = require('should'),
-    request = require('supertest'),
+"user strict";
+const request = require('supertest'),
     server = require('../app'),
-    config = require('../config')
+    config = require('../config');
 
 describe('Express server', () => {
 
