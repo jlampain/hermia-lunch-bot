@@ -19,7 +19,6 @@ describe("Linkosuo", () => {
                 m.should.have.property('text');
                 m.text.should.startWith('• ');
                 m.should.have.property('color');
-                console.log(m);
             });
         });
 
