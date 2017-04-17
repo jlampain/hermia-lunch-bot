@@ -1,4 +1,4 @@
-
+"user strict";
 const restaurants = require('../restaurants'),
 	  should = require('should');
 
@@ -11,4 +11,4 @@ describe("Restaurants", () => {
         });
       });
     });
-  });
+});

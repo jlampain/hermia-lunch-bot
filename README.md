@@ -1,6 +1,8 @@
 # Hermia-Lunch-Bot
 
 [![Build Status](https://travis-ci.org/jlampain/hermia-lunch-bot.svg?branch=master)](https://travis-ci.org/jlampain/hermia-lunch-bot)
+[![Coverage Status](https://coveralls.io/repos/github/jlampain/hermia-lunch-bot/badge.svg?branch=master)](https://coveralls.io/github/jlampain/hermia-lunch-bot?branch=master)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/jlampain/hermia-lunch-bot/master/LICENSE)
 
 Slackbot which displays lunch menus in Hermia campus area: [Hermia 5](http://www.sodexo.fi/hermia5), [Hermia 6](http://www.sodexo.fi/hermia6), [Hertta](http://www.linkosuo.fi/kahvilat/ravintola-hertta.html) and [Orvokki](http://www.linkosuo.fi/kahvilat/ravintola-orvokki.html). Kudos to this [nice tutorial](https://blog.heroku.com/archives/2016/3/9/how-to-deploy-your-slack-bots-to-heroku) from Heroku folks.
 
@@ -20,10 +22,10 @@ Create a `/lunch` [custom slash command](https://api.slack.com/slash-commands), 
 $ npm install
 ```
 
-### Copy `.env_example` to `.env`
+### Copy `.sample` to `.env`
 
 ```shell
-$ cp .env-example .env
+$ cp .env_sample .env
 ```
 
 ### Configure

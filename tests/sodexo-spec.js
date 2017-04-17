@@ -1,3 +1,4 @@
+"user strict";
 const sodexo = require('../restaurants/helpers/sodexo'),
     should = require('should');
 

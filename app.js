@@ -17,7 +17,7 @@ module.exports = app; // for testing
 /*
 Set the Fi locale, this will help us to parse linkosuo menus
  */
-moment.locale('fi', {
+moment.updateLocale('fi', {
     weekdaysMin: "Su_Ma_Ti_Ke_To_Pe_La".split("_")
 });
 

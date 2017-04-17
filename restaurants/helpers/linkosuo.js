@@ -27,6 +27,7 @@ const getMenu = (url, title) => {
                 str = str.split('<p><strong>' + moment().add(1, 'days').format("dd DD.MM"))[0];
                 str = str.replace(/<strong\s*[\/]?>/gi, "");
                 str = str.replace(/<\/strong\s*[\/]?>/gi, "");
+                str = str.replace(/<br><br>/gi, "<br>");
                 str = str.replace(/<br\s*[\/]?>/gi, "\n• ");
                 str = str.replace('&#x20AC;', " eur");
                 str = str.split('Lataa lounaslista')[0];
