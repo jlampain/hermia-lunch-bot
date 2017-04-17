@@ -14,7 +14,7 @@ moment.updateLocale('fi', {
 describe("Linkosuo", () => {
     describe("menu", () => {
         it("returns valid linkosuo menu", () => {
-            return linkosuo.getMenu('http://www.linkosuo.fi/kahvilat/ravintola-orvokki/lounaslista-orvokki.html', 'Orvokki').then(m => {
+            return linkosuo.getMenu('https://www.linkosuo.fi/toimipaikat/orvokki', 'Orvokki').then(m => {
                 m.should.have.property('title','Orvokki');
                 m.should.have.property('text');
                 m.text.should.startWith('• ');
