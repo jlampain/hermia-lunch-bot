@@ -2,7 +2,7 @@
 const linkosuo = require('./helpers/linkosuo');
 
 const menu = () => {
-	return linkosuo.getMenu('http://www.linkosuo.fi/kahvilat/ravintola-orvokki/lounaslista-orvokki.html', 'Orvokki');
+	return linkosuo.getMenu('https://www.linkosuo.fi/toimipaikat/orvokki', 'Orvokki');
 };
 
 module.exports = {

@@ -2,7 +2,7 @@
 const linkosuo = require('./helpers/linkosuo');
 
 const menu = () => {
-	return linkosuo.getMenu('http://www.linkosuo.fi/kahvilat/ravintola-hertta/lounaslista-hertta.html', 'Hertta');
+	return linkosuo.getMenu('https://www.linkosuo.fi/toimipaikat/hertta', 'Hertta');
 };
 
 module.exports = {
