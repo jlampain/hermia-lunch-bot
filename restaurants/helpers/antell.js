@@ -31,7 +31,7 @@ const getMenu = (url, title) => {
                     if ($(this).find('tr > [align=left]').first().text().trim() === moment().format("dddd")) {
                         $(this).find('tr').each(function(i) { 
                             if (i > 0) {
-                                attachment.text = attachment.text + '• ' + $(this).find('[align=left]').text().trim() + '/n';
+                                attachment.text = attachment.text + '• ' + $(this).find('[align=left]').text().trim() + '\n';
                             }
                         });
                     }
