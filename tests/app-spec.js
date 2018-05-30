@@ -3,7 +3,9 @@ const request = require('supertest'),
     server = require('../app'),
     config = require('../config');
 
-describe('Express server', () => {
+describe('Express server', function () {
+
+    this.timeout(4000);
 
     it('/', done => {
         request(server)
