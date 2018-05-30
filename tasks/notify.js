@@ -10,10 +10,11 @@ const Slack = require('slack-node'),
     restaurants = require('../restaurants');
 
 /*
-Set the Fi locale, this will help us to parse linkosuo menus
+Set the Fi locale, this will help us to parse linkosuo & antell menus
  */
 moment.updateLocale('fi', {
-    weekdaysMin: "Su_Ma_Ti_Ke_To_Pe_La".split("_")
+    weekdaysMin: "Su_Ma_Ti_Ke_To_Pe_La".split("_"),
+    weekdays: ['Sunnuntai','Maanantai','Tiistai','Keskiviikko','Torstai','Perjantai','Lauantai']
 });
 
 slack.setWebhook(config('LUNCHBOT_WEBHOOK_URL'));
@@ -34,6 +35,8 @@ if (moment().format('dd') != 'Su' && moment().format('dd') != 'La') {
             } else {
             	console.log('menu delivered');
             }
-        });
+        }); 
     });
 }
+
+
