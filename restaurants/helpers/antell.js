@@ -24,15 +24,15 @@ const getMenu = (url, title) => {
     return new Promise((resolve, reject) => {
         rp(options)
             .then($ => {
-                $('.space').remove();
-                $('.line').remove();
-                $('span').remove();
-                $('#lunch-content-table .show').each(function() {
-                    if ($(this).find('tr > [align=left]').first().text().trim() === moment().format("dddd")) {
-                        $(this).find('tr').each(function(i) { 
-                            if (i > 0) {
-                                attachment.text = attachment.text + '• ' + $(this).find('[align=left]').text().trim() + '\n';
+                $('.reveal-slideup-delay-0').each(function() {
+                    if ($(this).find('h3').first().text().trim().split(' ')[0] === moment().format("dddd")) {
+                        $(this).find('.price').remove();
+                        $(this).find('span').remove();
+                        $(this).find('li').each(function(i) {
+                            if ($(this).attr('class') !== 'menu-item-category') {
+                                attachment.text = attachment.text + '• ';
                             }
+                            attachment.text = attachment.text + $(this).text().replace(/[^a-zA-Z0-9äöüÄÖÜß]/g,' ').trim() + '\n';
                         });
                     }
                 });
