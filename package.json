@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node app.js",
     "notify": "node ./tasks/notify.js",
-    "test": "./node_modules/.bin/istanbul cover -R ./node_modules/mocha/bin/_mocha tests --timeout 5000",
+    "test": "./node_modules/.bin/istanbul cover -R ./node_modules/mocha/bin/_mocha tests",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "author": "Jussi Lampainen",

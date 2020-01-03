@@ -9,6 +9,6 @@ describe("Restaurants", () => {
         	m.should.be.instanceof(Array);
         	(m.length).should.be.aboveOrEqual(4);
         });
-      });
+      }).timeout('10s');;
     });
 });

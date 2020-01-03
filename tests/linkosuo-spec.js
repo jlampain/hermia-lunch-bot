@@ -20,7 +20,7 @@ describe("Linkosuo", () => {
                 m.text.should.startWith('• ');
                 m.should.have.property('color');
             });
-        });
+        }).timeout('5s');
 
         it("returns empty menu with invalid data", () => {
             return linkosuo.getMenu('http://www.google.com', 'Orvokki').then(m => {
