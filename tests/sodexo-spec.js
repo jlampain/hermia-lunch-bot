@@ -5,7 +5,7 @@ const sodexo = require('../restaurants/helpers/sodexo'),
 describe("Sodexo", () => {
     describe("menu", () => {
         it("returns valid sodexo menu", () => {
-            return sodexo.getMenu('http://www.sodexo.fi/ruokalistat/output/daily_json/134/', 'Hermia 5').then(m => {
+            return sodexo.getMenu('https://www.sodexo.fi/ravintolat/tampere/hermia-5', 'Hermia 5').then(m => {
                 m.should.have.property('title','Hermia 5');
                 m.should.have.property('text');
                 m.text.should.startWith('• ');

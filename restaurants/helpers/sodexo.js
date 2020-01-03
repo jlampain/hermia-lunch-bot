@@ -36,6 +36,8 @@ const getMenu = (url, title) => {
           $(key + ' .meal-name').each(function() {
             attachment.text = attachment.text  + `• ${$(this).text()}\n`;
           });
+        } else {
+            attachment.text = '• Sorry, menu is not available today';
         }
         resolve(attachment);
       })
