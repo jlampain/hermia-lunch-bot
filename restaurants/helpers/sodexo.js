@@ -1,46 +1,51 @@
-"use strict";
+'use strict';
 const rp = require('request-promise'),
-    _ = require('lodash');
+  cheerio = require('cheerio');
 
 /**
- * Fetches lunch menu via sodexo REST API
- * @param  {string} url 
+ * Scrapes lunch menu from sodexo web pages
+ * @param  {string} url
  * @param  {string} restaurant name
  * @return {object} lunch menu in slack message attachemnt
  */
 const getMenu = (url, title) => {
-    let attachment = {};
-    attachment.title = title;
-    attachment.color = '#36a64f';
-    attachment.text = '';
-    let d = new Date();
-    let options = {
-        uri: url + d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + '/fi'
-    };
-    return new Promise((resolve, reject) => {
-        rp(options)
-            .then(body => {
-                let list = JSON.parse(body);
-                if (list.hasOwnProperty('courses') && !_.isEmpty(list.courses)) {
-                    list.courses.forEach((entry, index) => {
-                        if (index === 0) {
-                            attachment.text = '• ' + entry.title_fi;
-                        } else {
-                            attachment.text = attachment.text + '\n• ' + entry.title_fi;
-                        }
-                    });
-                } else {
-                    attachment.text = '• Sorry, menu is not available today';
-                }
-                resolve(attachment);
-            })
-            .catch(err => {
-                attachment.text = '• Sorry, menu is not available today';
-                resolve(attachment);
-            });
-    });
+  let attachment = {};
+  attachment.title = title;
+  attachment.color = '#36a64f';
+  attachment.text = '';
+  let options = {
+    uri: url,
+    transform: body => {
+      return cheerio.load(body);
+    }
+  };
+  return new Promise((resolve, reject) => {
+    rp(options)
+      .then($ => {
+        let key;
+        $('#menuviewblock li').each(function(i) {
+          if (
+            $(this)
+              .text()
+              .trim() === 'Tänään'
+          ) {
+            key = $(this).children()[0].attribs.href;
+          }
+        });
+        if (key) {
+          $(key + ' .meal-name').each(function() {
+            attachment.text = attachment.text  + `• ${$(this).text()}\n`;
+          });
+        }
+        resolve(attachment);
+      })
+      .catch(err => {
+        attachment.text = '• Sorry, menu is not available today';
+        resolve(attachment);
+      });
+  });
 };
 
 module.exports = {
-    getMenu: getMenu
+  getMenu: getMenu
 };

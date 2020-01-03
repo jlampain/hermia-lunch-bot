@@ -2,7 +2,7 @@
 const sodexo = require('./helpers/sodexo');
 
 const menu = () => {
-	return sodexo.getMenu('http://www.sodexo.fi/ruokalistat/output/daily_json/9870/', 'Hermia 6');
+	return sodexo.getMenu('https://www.sodexo.fi/ravintolat/tampere/hermia-6', 'Hermia 6');
 };
 
 module.exports = {
