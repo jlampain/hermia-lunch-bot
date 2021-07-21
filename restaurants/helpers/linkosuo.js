@@ -23,7 +23,7 @@ const getMenu = (url, title) => {
         rp(options)
             .then($ => {
                 let str = $('.wp-block-lunch-single').html();
-                str = str.split(moment().format("dddd DD.MM") + '</dt><dd>')[1];
+                str = str.split(moment().format("dddd DD.MM"))[1];
                 str = str.split('<dt>' + moment().add(1, 'days').format("dddd DD.MM"))[0];
                 attachment.text = $(str).text() != 'undefined' ? '• ' + $(str).text().replace(/(\r\n|\n|\r)/gm,"\n• ") : '• Sorry, menu is not available today';
                 resolve(attachment);
