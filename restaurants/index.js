@@ -2,10 +2,10 @@
 const restaurants = [];
 
 // load all restaurants
-restaurants.push(require('./orvokki.js'));
+//restaurants.push(require('./orvokki.js'));
 restaurants.push(require('./hertta.js'));
 restaurants.push(require('./hermiafarmi.js'));
-restaurants.push(require('./hermia5.js'));
+//restaurants.push(require('./hermia5.js'));
 restaurants.push(require('./hermia6.js'));
 
 /**

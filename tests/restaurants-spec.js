@@ -7,7 +7,7 @@ describe("Restaurants", () => {
     it("returns all menus", () => {     
         return restaurants.menus().then(m => {
         	m.should.be.instanceof(Array);
-        	(m.length).should.be.aboveOrEqual(4);
+        	(m.length).should.be.aboveOrEqual(3);
         });
       }).timeout('10s');
     });
