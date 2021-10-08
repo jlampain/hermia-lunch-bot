@@ -22,13 +22,20 @@ const getMenu = (url, title) => {
     return new Promise((resolve, reject) => {
         rp(options)
             .then($ => {
-                let str = $('.week-lunch').html();
-                str = str.split(moment().format("dddd DD.MM"))[1];
-                str = str.split('<dt>' + moment().add(1, 'days').format("dddd DD.MM"))[0];
-                attachment.text = $(str).text() != 'undefined' ? '• ' + $(str).text().replace(/(\r\n|\n|\r)/gm,"\n• ") : '• Sorry, menu is not available today';
+                const selector = $('#current-week-lunch');
+                const today = new Date();
+                $(selector).find('dd').each(function (index) {
+                    if (today.getDay() - 1 === index) {
+                        attachment.text = $(this).text();
+                    }
+                });
+                if (!attachment.text) {
+                    attachment.text = '• Sorry, menu is not available today';
+                }
                 resolve(attachment);
             })
             .catch(err => {
+                console.log(err);
                 attachment.text = '• Sorry, menu is not available today';
                 resolve(attachment);
             });
