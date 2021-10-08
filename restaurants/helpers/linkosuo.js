@@ -15,6 +15,9 @@ const getMenu = (url, title) => {
     attachment.color = '#36a64f';
     let options = {
         uri: url,
+        agentOptions: {
+            rejectUnauthorized: false
+        },
         transform: body => {
             return cheerio.load(body);
         }
